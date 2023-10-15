@@ -23,9 +23,9 @@ public class ConfigWorkReq {
 	@Schema(title = "spark的配置文件", example = "{\"spark.executor.memory\":\"1g\",\"spark.driver.memory\":\"1g\"}")
 	private String sparkConfig;
 
-  @Schema(title = "数据同步的配置文件", example = "{\"partitionColumn\": \"id\", \"lowerBound\":\"1\",\"upperBound\":\"10000000\",\"numPartitions\": \"300\"}")
-  private String syncConf;
+  @Schema(title = "自定义jar作业的配置文件", example = "{\"jarFileId\": \"sy_87070db5b87a481b8cb685981c2ecf2c\",\"libFileId\": [\"sy_4b3a3ee6f41d487787444eb5e311c8f7\"],\"mainClass\": \"com.isxcode.star.plugin.dataSync.jdbc.Execute\",\"args\": \"xxxxx\"}")
+  private String jarConf;
 
-	@Schema(title = "corn表达式", example = "0 0/3 * * * ?")
+  @Schema(title = "corn表达式", example = "0 0/3 * * * ?")
 	private String corn;
 }

@@ -44,7 +44,7 @@ public class WorkConfigEntity {
 
 	private String sparkConfig;
 
-  private String syncConf;
+  private String jarConf;
 
 	private String corn;
 

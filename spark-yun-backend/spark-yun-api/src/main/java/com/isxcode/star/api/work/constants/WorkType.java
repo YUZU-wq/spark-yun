@@ -10,4 +10,6 @@ public interface WorkType {
 	String QUERY_JDBC_SQL = "QUERY_JDBC";
 
   String DATA_SYNC_JDBC = "DATA_SYNC_JDBC";
+
+  String SPARK_JAR = "SPARK_JAR";
 }

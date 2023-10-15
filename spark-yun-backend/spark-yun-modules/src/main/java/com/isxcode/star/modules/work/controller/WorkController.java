@@ -198,11 +198,4 @@ public class WorkController {
     return syncWorkBizService.getCreateTableSql(getCreateTableSqlReq);
   }
 
-  /*@Operation(summary = "数据同步配置预生成")
-  @PostMapping("/getTmpSyncConf")
-  @SuccessResponse("查询成功")
-  public GetTmpSyncConfRes getTmpSyncConf(@Valid @RequestBody GetTmpSyncConfReq getTmpSyncConfReq) throws Exception {
-
-    return syncWorkBizService.getTmpSyncConf(getTmpSyncConfReq);
-  }*/
 }

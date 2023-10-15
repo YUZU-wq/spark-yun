@@ -44,10 +44,11 @@ create table SY_FILE
     unique (id)
 );
 
-ALTER TABLE SY_WORK_CONFIG ADD sync_conf text NULL;
-ALTER TABLE SY_WORK_CONFIG CHANGE sync_conf sync_conf text NULL AFTER sql_script;
-
 ALTER TABLE SY_SYNC_WORK_CONFIG ADD source_table_data text NULL;
 ALTER TABLE SY_SYNC_WORK_CONFIG CHANGE source_table_data sourceTableData text not NULL AFTER over_mode;
 ALTER TABLE SY_SYNC_WORK_CONFIG ADD target_table_data text NULL;
 ALTER TABLE SY_SYNC_WORK_CONFIG CHANGE target_table_data targetTableData text not NULL AFTER sourceTableData;
+
+ALTER TABLE SY_WORK_CONFIG ADD jar_conf text NULL;
+ALTER TABLE SY_WORK_CONFIG CHANGE jar_conf jarConf text NULL AFTER sync_conf;
+

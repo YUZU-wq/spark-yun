@@ -21,6 +21,8 @@ public class GetWorkRes {
 
 	private String workId;
 
+  private String jarConf;
+
 	private String corn;
 
 	private String sparkConfig;

@@ -1,17 +1,15 @@
 package com.isxcode.star.common.utils.ssh;
 
 import com.isxcode.star.api.cluster.pojos.dto.ScpFileEngineNodeDto;
-import com.jcraft.jsch.ChannelExec;
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
-import com.jcraft.jsch.SftpATTRS;
-import com.jcraft.jsch.SftpException;
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import com.jcraft.jsch.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.FileSystemResourceLoader;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 /** ssh连接工具类. */
 @Slf4j
@@ -43,7 +41,7 @@ public class SshUtils {
 		ChannelSftp channel;
 		channel = (ChannelSftp) session.openChannel("sftp");
 		channel.connect(120000);
-		DefaultResourceLoader resourceLoader = new DefaultResourceLoader();
+    FileSystemResourceLoader resourceLoader = new FileSystemResourceLoader();
 		channel.put(resourceLoader.getResource(srcPath).getInputStream(), dstPath);
 
 		// 文件校验
